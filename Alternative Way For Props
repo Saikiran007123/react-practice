@@ -1,0 +1,72 @@
+App.js
+
+
+
+import React from "react";
+import ExpenseItem from "./ExpenseItem";
+function App() {
+  const arr = [
+    {
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: 'e3',
+      title: 'Car Insurance',
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
+    },
+    {
+      id: 'e4',
+      title: 'New Desk (Wooden)',
+      amount: 450,
+      date: new Date(2021, 5, 12),
+    },
+  ];
+  return (
+    <div>
+      <h2>Let's get started!</h2>
+      <ExpenseItem
+       expense = {arr[0]}
+      ></ExpenseItem>
+
+      <ExpenseItem
+       expense = {arr[1]}
+      ></ExpenseItem>
+
+      <ExpenseItem
+       expense = {arr[2]}
+      ></ExpenseItem>
+
+
+      <ExpenseItem
+       expense = {arr[3]}
+      ></ExpenseItem>
+    </div>
+  );
+}
+
+export default App;
+
+
+Product.js
+
+import React from "react";
+import "./ExpenseItem.css";
+function ExpenseItem(props) {
+  return (
+    <div className="expense-item">
+      <div>{props.expense.title}</div>
+      <div className="expense-item__description">
+        <h1>{props.expense.title}</h1>
+        <div className="expense-item__price">{props.expense.amount}</div>
+      </div>
+    </div>
+  );
+}
+
+export default ExpenseItem;
+
